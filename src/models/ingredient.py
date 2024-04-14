@@ -65,3 +65,5 @@ class Ingredient:
 
 teste = Ingredient("manteiga")
 teste2 = Ingredient("manteiga")
+
+print(teste.restrictions)
