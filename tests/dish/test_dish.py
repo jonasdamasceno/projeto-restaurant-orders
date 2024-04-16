@@ -30,8 +30,10 @@ def test_dish():
 
     assert repr(test_dish1) == "Dish('Petit gateau', R$30.00)"
 
+    # Verifica se uma exceção é lançada se o preço for uma string
     with pytest.raises(TypeError):
         Dish("Parmegiana", "Teste")
 
+    # Verifica se uma exceção é lançada se o preço for negativo
     with pytest.raises(ValueError):
         Dish("Parmegiana", -3)
