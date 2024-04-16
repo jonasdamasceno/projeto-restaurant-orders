@@ -39,7 +39,8 @@ class InventoryMapping:
                 inventory[ingredient_name] = initial_amount
 
         return all(
-            self.inventory.get(ingredient) >= int(recipe[ingredient])
+            self.inventory.get(ingredient)
+            and self.inventory.get(ingredient) >= int(recipe[ingredient])
             for ingredient in recipe
         )
 
