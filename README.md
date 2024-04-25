@@ -301,20 +301,6 @@ A classe `InventoryMapping` se encontra no arquivo `src/services/inventory_contr
 
 - o método `consume_recipe` subtrai os ingredientes da receita do total disponível em estoque caso a receita esteja disponível para consumo e levanta uma exceção `ValueError` caso contrário.
 
-<details>
-  <summary>
-    <b>🤖 Clique aqui para ver o que será verificado pelo avaliador.</b>
-  </summary>
-
-- 5.1 - Valida o funcionamento do método `check_recipe_availability`;
-    - 5.1.1 - O método retorna `True` se a receita pode ser feita usando os ingredientes disponíveis (mas não mais do que o disponível). O teste roda para cada um dos ingredientes do arquivo do banco de dados.
-    - 5.1.2 - O método retorna `False` se a receita usa mais de algum ingrediente do que o que está disponível. O teste roda para cada um dos ingredientes do arquivo do banco de dados
-- 5.2 - Valida o funcionamento do método `consume_recipe`;
-    - 5.2.1 - O método retorna `None` ao consumir uma receita disponível e, não havendo nenhum erro, o inventário é atualizado conforme a receita consumida. O teste roda com várias receitas disponíveis.
-    - 5.2.2 - O método levanta um `ValueError` ao tentar consumir uma receita indisponível. O teste roda com várias receitas indisponíveis, incluindo uma que só fica indisponível após uma que estava disponível ser consumida corretamente.
-
-</details>
-
 ## 6 - Cardápios baseados no estoque 
 
 Com a implementação que foi feita até o momento, o método gerador de cardápios, `get_main_menu`, considera apenas as restrições alimentares para fazer a geração do cardápio com os pratos que as pessoas podem comer. Isso ainda é um problema, dado que ainda não é feita a verificação se os ingredientes do prato estão disponíveis em estoque.
@@ -333,17 +319,6 @@ Ao longo de sua implementação você deve garantir que:
 
 - o método `get_main_menu` retorna uma lista de dicionários com os cardápios corretos respeitando a restrição alimentar passada como parâmetro e também a disponibilidade de ingredientes no estoque;
 
-<br>
-<details>
-  <summary>
-    <b>🤖 Clique aqui para ver o que será verificado pelo avaliador.</b>
-  </summary>
-
-- Os testes dos requisitos 4.3 e 4.4 passando são pré-requisitos para o teste do requisito 6 rodar.
-
-- 6 - O método `get_main_menu` retorna uma lista vazia quando o estoque não possui os ingredientes necessários para a confecção dos pratos.
-
-</details>
 <br>
 
 <details>
